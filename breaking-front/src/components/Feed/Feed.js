@@ -106,10 +106,13 @@ export default function Feed({ feedData, ...props }) {
             )}
           </Style.FeedToggle>
         </Style.FeedHeader>
-        <Style.FeedThumbnailContainer to={PAGE_PATH.POST(feedData.postId)}>
+        <Style.FeedThumbnailContainer
+          onClick={() => navigate(PAGE_PATH.POST(feedData.postId))}
+        >
           {feedData.thumbnailImgURL ? (
             <Style.ThumbnailImage
               src={ImageUrlConverter(feedData.thumbnailImgURL)}
+              alt="thumbnail"
             />
           ) : (
             <Style.DefaultThumbnailImage as="div">
@@ -129,7 +132,9 @@ export default function Feed({ feedData, ...props }) {
               {isBookmarked ? <BookmarkedIcon /> : <BookmarkIcon />}
             </Style.Bookmark>
           </Style.FeedContentHeader>
-          <Style.FeedContent to={PAGE_PATH.POST(feedData.postId)}>
+          <Style.FeedContent
+            onClick={() => navigate(PAGE_PATH.POST(feedData.postId))}
+          >
             <Style.FeedTitle>{feedData.title}</Style.FeedTitle>
             <Style.FeedPrice>
               {feedData.price.toLocaleString('ko-KR')} 원

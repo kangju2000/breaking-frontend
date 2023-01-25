@@ -27,7 +27,8 @@ export default function Header() {
   const [isOpenToggle, setIsOpenToggle] = useState(false);
 
   const logoClick = () => {
-    if (pathname === '/') window.scrollTo(0, 0);
+    if (pathname === '/') return window.scrollTo(0, 0);
+    navigate(PAGE_PATH.HOME);
   };
 
   const loginButtonClick = () => {
@@ -66,11 +67,16 @@ export default function Header() {
     <Style.HeaderContainer>
       <Style.HeaderContent>
         <Style.SearchContent>
-          <Style.LogoContainer to={PAGE_PATH.HOME} onClick={logoClick}>
+          <Style.LogoContainer onClick={logoClick}>
             <LogoIcon width="100%" height="100%" />
           </Style.LogoContainer>
           <Style.Form onSubmit={handleSubmit}>
+            <label htmlFor="search">search</label>
             <Input
+              type="text"
+              id="search"
+              name="search"
+              aria-labelledby="search"
               icon={<SearchIcon />}
               iconClick={handleSubmit}
               onChange={onChange}

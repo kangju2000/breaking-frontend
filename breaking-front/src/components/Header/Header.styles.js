@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Button from 'components/Button/Button';
 import styled from 'styled-components';
 
@@ -35,13 +34,16 @@ export const ProfileContent = styled.div`
   }
 `;
 
-export const LogoContainer = styled(Link)`
+export const LogoContainer = styled.div`
   width: 55px;
   margin-right: 70px;
 `;
 
 export const Form = styled.form`
   width: 280px;
+  label {
+    display: none;
+  }
 `;
 
 export const LoginButton = styled(Button)`

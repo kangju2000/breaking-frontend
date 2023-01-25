@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Feed = styled.div`
@@ -46,7 +45,7 @@ export const Location = styled.div`
   }
 `;
 
-export const FeedThumbnailContainer = styled(Link)``;
+export const FeedThumbnailContainer = styled.div``;
 
 export const ThumbnailImage = styled.img`
   width: 100%;
@@ -85,7 +84,7 @@ export const Bookmark = styled.div`
   }
 `;
 
-export const FeedContent = styled(Link)`
+export const FeedContent = styled.div`
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
